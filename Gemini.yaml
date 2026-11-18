@@ -1,0 +1,151 @@
+# Gemini / Google Antigravity / Google Search
+# Clash / Mihomo rule-provider: behavior: classical, format: yaml
+# 核对日期：2026-11-18
+# 参考：https://github.com/Xanerix/ClashProviders/blob/main/Claude.yaml
+# 域名索引：https://github.com/v2fly/domain-list-community/blob/master/data/google-deepmind
+# Antigravity 网络端点：https://antigravity.google/docs/enterprise#network-allowlists-and-mtls-endpoints
+# Antigravity 客户端端点：https://docs.cloud.google.com/docs/security/compliance/deploy-antigravity-us-public-sector
+# Gemini API：https://ai.google.dev/api
+# Gemini Code Assist：https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini
+# Google 搜索地区域名：https://www.google.com/supported_domains
+
+payload:
+  # Google 搜索、AI Mode、各地区入口、搜索建议、图片搜索和 Lens
+  - DOMAIN-REGEX,^(www\.)?google\.(ad|ae|al|am|as|at|az|ba|be|bf|bg|bi|bj|bs|bt|by|ca|cat|cd|cf|cg|ch|ci|cl|cm|cn|com|cv|cz|de|dj|dk|dm|dz|ee|es|fi|fm|fr|ga|ge|gg|gl|gm|gr|gy|hn|hr|ht|hu|ie|im|iq|is|it|je|jo|kg|ki|kz|la|li|lk|lt|lu|lv|md|me|mg|mk|ml|mn|mu|mv|mw|ne|nl|no|nr|nu|pl|pn|ps|pt|ro|rs|ru|rw|sc|se|sh|si|sk|sm|sn|so|sr|st|td|tg|tl|tm|tn|to|tt|vu|ws)$
+  - DOMAIN-REGEX,^(www\.)?google\.co\.(ao|bw|ck|cr|id|il|in|jp|ke|kr|ls|ma|mz|nz|th|tz|ug|uk|uz|ve|vi|za|zm|zw)$
+  - DOMAIN-REGEX,^(www\.)?google\.com\.(af|ag|ar|au|bd|bh|bn|bo|br|bz|co|cu|cy|do|ec|eg|et|fj|gh|gi|gt|hk|jm|kh|kw|lb|ly|mm|mt|mx|my|na|ng|ni|np|om|pa|pe|pg|ph|pk|pr|py|qa|sa|sb|sg|sl|sv|tj|tr|tw|ua|uy|vc|vn)$
+  - DOMAIN,images.google.com
+  - DOMAIN,lens.google.com
+  - DOMAIN,lens.google
+  - DOMAIN,search.google.com
+  - DOMAIN,m.google.com
+  - DOMAIN,ipv4.google.com
+  - DOMAIN,ipv6.google.com
+  - DOMAIN,suggestqueries.google.com
+  - DOMAIN,suggestqueries-clients6.google.com
+  - DOMAIN-REGEX,^encrypted-tbn[0-9]+\.gstatic\.com$
+  - DOMAIN,share.google
+  - DOMAIN,search.app
+  - DOMAIN,cse.google.com
+  - DOMAIN,customsearch.googleapis.com
+
+  # Gemini 网页、Live、旧版 Bard 入口、聊天分享和搜索引用
+  - DOMAIN-SUFFIX,gemini.google.com
+  - DOMAIN-SUFFIX,gemini.google
+  - DOMAIN-SUFFIX,bard.google.com
+  - DOMAIN-SUFFIX,gemini.gstatic.com
+  - DOMAIN-REGEX,^geminiweb-pa\.clients6?\.google\.com$
+  - DOMAIN,geminiweb-pa.googleapis.com
+  - DOMAIN,geller-pa.googleapis.com
+  - DOMAIN,proactivebackend-pa.googleapis.com
+  - DOMAIN,robinfrontend-pa.googleapis.com
+  - DOMAIN,g.co
+  - DOMAIN,vertexaisearch.cloud.google.com
+
+  # Google AI Studio、Build 预览 CDN、Gemini API 和文件接口
+  - DOMAIN-SUFFIX,aistudio.google.com
+  - DOMAIN-SUFFIX,aistudiocdn.com
+  - DOMAIN-SUFFIX,ai.studio
+  - DOMAIN,ai.google.dev
+  - DOMAIN,ai.google
+  - DOMAIN-SUFFIX,generativeai.google
+  - DOMAIN-SUFFIX,makersuite.google.com
+  - DOMAIN-SUFFIX,deepmind.google
+  - DOMAIN-SUFFIX,deepmind.com
+  - DOMAIN-REGEX,^(alkalicore-pa|alkalimakersuite-pa|webchannel-alkalimakersuite-pa)\.clients6?\.google\.com$
+  - DOMAIN,alkalimakersuiteapplets.pa.googleapis.com
+  - DOMAIN,generativelanguage.googleapis.com
+  - DOMAIN,generativelanguage.mtls.googleapis.com
+  - DOMAIN,content-generativelanguage.googleapis.com
+
+  # Antigravity 官网、Web、App、IDE、CLI、插件市场及个人版后端
+  - DOMAIN-SUFFIX,antigravity.google
+  - DOMAIN-SUFFIX,antigravity.google.com
+  - DOMAIN-SUFFIX,antigravity-unleash.goog
+  - DOMAIN,antigravity.googleapis.com
+  - DOMAIN,antigravity-pa.googleapis.com
+  - DOMAIN,agentaicode.googleapis.com
+  - DOMAIN,aicode.googleapis.com
+  - DOMAIN,cloudcode-pa.googleapis.com
+  - DOMAIN,daily-cloudcode-pa.googleapis.com
+  - DOMAIN,daily-cloudcode-pa.sandbox.googleapis.com
+  - DOMAIN,play.googleapis.com
+  - DOMAIN,safebrowsing.googleapis.com
+
+  # Antigravity App、IDE 和 CLI 安装与自动更新
+  - DOMAIN,antigravity-hub-auto-updater-974169037036.us-central1.run.app
+  - DOMAIN,antigravity-ide-auto-updater-974169037036.us-central1.run.app
+  - DOMAIN,antigravity-cli-auto-updater-974169037036.us-central1.run.app
+  - DOMAIN,storage.googleapis.com
+  - DOMAIN,edgedl.me.gvt1.com
+  - DOMAIN,dl.google.com
+  - DOMAIN,update.googleapis.com
+  - DOMAIN,tools.google.com
+  - DOMAIN,us-central1-apt.pkg.dev
+  - DOMAIN,us-central1-yum.pkg.dev
+
+  # Gemini Code Assist、Android Studio、Workspace 内嵌 Gemini
+  - DOMAIN,cloudaicompanion.googleapis.com
+  - DOMAIN,aida.googleapis.com
+  - DOMAIN-REGEX,^appsgenaiserver-pa\.(clients6?\.google\.com|googleapis\.com)$
+  - DOMAIN,apihub.googleapis.com
+  - DOMAIN,firebaselogging-pa.googleapis.com
+  - DOMAIN,feedback-pa.googleapis.com
+  - DOMAIN,developers.google.com
+
+  # Antigravity 企业版、Vertex AI、Gemini Enterprise 全球与区域端点
+  - DOMAIN,businessaicode.googleapis.com
+  - DOMAIN,businessaicode.mtls.googleapis.com
+  - DOMAIN-REGEX,^businessaicode\.[a-z0-9-]+\.rep\.googleapis\.com$
+  - DOMAIN,aiplatform.googleapis.com
+  - DOMAIN,aiplatform.mtls.googleapis.com
+  - DOMAIN-REGEX,^[a-z0-9-]+-aiplatform(\.mtls)?\.googleapis\.com$
+  - DOMAIN-REGEX,^aiplatform\.[a-z0-9-]+\.rep\.googleapis\.com$
+  - DOMAIN-REGEX,^((us|eu)-)?discoveryengine(\.mtls)?\.googleapis\.com$
+  - DOMAIN,cloudresourcemanager.googleapis.com
+  - DOMAIN,serviceusage.googleapis.com
+  - DOMAIN,servicecontrol.googleapis.com
+  - DOMAIN,apikeys.googleapis.com
+  - DOMAIN,cloudbilling.googleapis.com
+  - DOMAIN,console.cloud.google.com
+  - DOMAIN,auth.cloud.google
+
+  # Google 登录、OAuth、账户资格、订阅及企业身份联合
+  - DOMAIN,accounts.google.com
+  - DOMAIN,accounts.google
+  - DOMAIN,accounts.gstatic.com
+  - DOMAIN,myaccount.google.com
+  - DOMAIN,policies.google.com
+  - DOMAIN,consent.google.com
+  - DOMAIN,apis.google.com
+  - DOMAIN,oauth2.googleapis.com
+  - DOMAIN,oauth2.mtls.googleapis.com
+  - DOMAIN,openidconnect.googleapis.com
+  - DOMAIN,www.googleapis.com
+  - DOMAIN,www.mtls.googleapis.com
+  - DOMAIN,people.googleapis.com
+  - DOMAIN,iamcredentials.googleapis.com
+  - DOMAIN,sts.googleapis.com
+  - DOMAIN,one.google.com
+  - DOMAIN,payments.google.com
+  - DOMAIN,paydeveloper.googleapis.com
+  - DOMAIN,play.google.com
+  - DOMAIN,chromewebstore.google.com
+
+  # 网页静态资源、头像、图片、附件及 Drive / Docs 导入导出
+  # 这些主机由多个 Google 服务共用，其他服务访问同一主机时也会命中。
+  - DOMAIN,ogs.google.com
+  - DOMAIN,www.gstatic.com
+  - DOMAIN,ssl.gstatic.com
+  - DOMAIN,fonts.googleapis.com
+  - DOMAIN,fonts.gstatic.com
+  - DOMAIN-REGEX,^lh[1-6](-rt)?\.googleusercontent\.com$
+  - DOMAIN-SUFFIX,drive.googleusercontent.com
+  - DOMAIN-SUFFIX,docs.googleusercontent.com
+  - DOMAIN-SUFFIX,usercontent.googleusercontent.com
+  - DOMAIN,drive.google.com
+  - DOMAIN,docs.google.com
+  - DOMAIN,drive.googleapis.com
+  - DOMAIN,drive-thirdparty.googleusercontent.com
+  - DOMAIN,drive.usercontent.google.com
+  - DOMAIN,storage.cloud.google.com
